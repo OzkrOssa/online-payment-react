@@ -1,7 +1,10 @@
 import Laptop from "@/assets/images/laptop.png";
 import { TabsComponent } from "@/components/tabs/tabs-component";
+import PayMethods from "@/components/pay-methods/pay-methods";
+import { useSmartISPStore } from "./store/smartisp-store";
 
 function App() {
+  const invoice = useSmartISPStore((state)=>state.invoice)
   return (
     <main className="flex flex-col items-center justify-center min-h-screen font-[Poppins]">
     <div className="flex flex-row w-full justify-between relative">
@@ -12,6 +15,8 @@ function App() {
         </div>
         {/* Tabs */}
         <TabsComponent />
+        {/* Pay Methods */}
+        {invoice && <PayMethods />}
       </div>
       <div className="hidden md:block absolute inset-0 items-center justify-center md:static md:w-1/2">
         <img src={Laptop} alt="laptop" width={700} height={500} />
