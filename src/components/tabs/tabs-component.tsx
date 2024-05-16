@@ -37,6 +37,7 @@ export function TabsComponent() {
               <CardDescription>
                 {subscriber.user.name} - {subscriber.user.dni}
               </CardDescription>
+              <p>Selecciona la factura que deseas pagar</p>
             </CardHeader>
             <CardContent>
               <RadioGroup onValueChange={handleChange}>
