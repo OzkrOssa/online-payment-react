@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useSmartISPStore } from "@/store/smartisp-store";
 
 const documentSchema = z.object({
   document: z.string().min(1, { message: "Ingrese un documento valido." }),
@@ -21,8 +22,10 @@ export default function DocumentForm() {
     defaultValues: { document: "" },
   });
 
+  const fetchSubscriberByDni = useSmartISPStore((state) => state.fetchSubscriberByDni)
+
   const onSubmit = (values: z.infer<typeof documentSchema>) => {
-    console.log(values);
+    fetchSubscriberByDni(values.document);
     form.reset();
   };
 
