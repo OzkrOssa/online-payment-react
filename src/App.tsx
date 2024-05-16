@@ -3,7 +3,7 @@ import { TabsComponent } from "@/components/tabs/tabs-component";
 
 function App() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
+    <main className="flex flex-col items-center justify-center min-h-screen font-[Poppins]">
     <div className="flex flex-row w-full justify-between relative">
       <div className="w-full md:w-1/2 flex flex-col items-center p-4">
         {/* Title */}
